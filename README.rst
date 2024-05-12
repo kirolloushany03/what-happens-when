@@ -366,6 +366,17 @@ This send and receive happens multiple times following the TCP connection flow:
    * The closer sends a FIN packet
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
+  
+Connection Pooling Integration
+------------------------------
+* In the context of optimizing network connections, modern web browsers often utilize connection pooling mechanisms to improve efficiency.
+  Connection pooling involves maintaining a pool of established connections to the server,
+  allowing subsequent requests to reuse existing connections rather than creating new ones.
+  This reduces the overhead of establishing and tearing down connections for each request, thereby improving performance and resource utilization.
+
+Upon initiating a request to the server, the browser checks if there are available connections in the connection pool. If there are, it selects an idle connection from the pool and uses it for the request. If no idle connections are available or if the maximum connection limit has been reached, the browser establishes a new connection and adds it to the pool for future reuse.
+
+Connection pooling offers benefits such as reduced latency, minimized resource consumption, and improved scalability, making it a valuable optimization technique in modern web browsing.
 
 TLS handshake
 -------------
